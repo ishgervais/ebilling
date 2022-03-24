@@ -1,9 +1,9 @@
+
 {
   "name": "meter-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "start": "esno dist/index.js",
     "dev": "nodemon src/index.ts",
@@ -30,7 +30,6 @@
     "@faker-js/faker": "^6.0.0-alpha.5",
     "@types/express": "^4.17.13",
     "@types/jest": "^27.4.0",
-    "@types/mocha": "^9.1.0",
     "@types/node": "^17.0.8",
     "@types/supertest": "^2.0.11",
     "@types/uuid": "^8.3.4",
