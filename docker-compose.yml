@@ -23,7 +23,7 @@ services:
       context: backend
       dockerfile: Dockerfile
     ports:
-      - "8000:8000"
+      - "4000:4000"
     volumes:
       - "./backend:/app"
 
