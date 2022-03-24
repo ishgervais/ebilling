@@ -27,6 +27,13 @@ services:
     volumes:
       - "./backend:/app"
 
+  nginx:
+    image: "ishgervais/nginx"
+    mem_limit: 128m
+    hostname: nginx
+    ports:
+      - "80:80"
+
 volumes:
   frontend:
   backend:
