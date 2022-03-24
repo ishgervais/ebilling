@@ -1,9 +1,9 @@
 name: Docker series CI
 on:
   push:
-    branches: [ exam ]
+    branches: [exam]
   pull_request:
-    branches: [ exam ]
+    branches: [exam]
   workflow_dispatch:
 jobs:
   build:
