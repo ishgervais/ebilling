@@ -5,15 +5,16 @@ RUN apt-get update && apt-get install -y openssl
 WORKDIR /usr/app
 
 COPY ./package.json /usr/app
-
+    
 RUN yarn 
 
-COPY ./ /usr/app
-
-RUN yarn build
-
-EXPOSE 4000
+COPY . . 
 
 RUN npx prisma migrate deploy
 
-CMD ["yarn","start"]
+RUN npm run build
+
+EXPOSE 4000
+
+
+CMD ["npm","start"]
