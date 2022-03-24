@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   frontend:
-    image: makuzamugaboverite/ebillingfronted:latest
+    image: ishgervais/client_ebilling:latest
     stdin_open: true # docker run -i
     tty: true # docker run -t
     build:
@@ -17,7 +17,7 @@ services:
       - backend
 
   backend:
-    image: makuzamugaboverite/ebillingbackend:latest
+    image: ishgervais/server_ebilling:latest
     stdin_open: true # docker run -i
     tty: true # docker run -t
     build:
@@ -28,7 +28,7 @@ services:
     volumes:
       - "./backend:/app"
   db:
-    image: makuzamugaboverite/ebillingdb:latest
+    image: ishgervais/ebillingdb:latest
     stdin_open: true # docker run -i
     tty: true # docker run -t
     build:
