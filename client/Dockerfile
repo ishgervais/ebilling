@@ -1,4 +1,4 @@
-FROM node:17-alpine
+FROM node:10-alpine as build-step
 
 WORKDIR /usr/app
 

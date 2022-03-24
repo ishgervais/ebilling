@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  frontend:
+    image: makuzamugaboverite/ebillingfronted:latest
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+      - "8002:8002" # for Hot-reloading
+    volumes:
+      - "./frontend:/app"
+    links:
+      - backend
+
+  backend:
+    image: makuzamugaboverite/ebillingbackend:latest
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - "./backend:/app"
+  db:
+    image: makuzamugaboverite/ebillingdb:latest
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    build:
+      context: .
+      dockerfile: db.Dockerfile
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+
+volumes:
+  frontend:
+  backend:
+  db:
